@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { studies, experiences } from './data/resume';
 
 const Resume = () => (
