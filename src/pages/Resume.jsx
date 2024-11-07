@@ -1,5 +1,5 @@
 //import React from 'react';
-import { studies, experiences } from './data/resume';
+import { studies, experiences } from '../data/resume';
 
 const Resume = () => (
     <>

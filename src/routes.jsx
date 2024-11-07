@@ -1,19 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './Home.jsx';
-import Projects from './Projects.jsx';
-import Resume from './Resume.jsx';
+import { createBrowserRouter } from "react-router-dom";
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import Resume from './pages/Resume'
+import Header from './templates/Header'
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-    </Router>
-  );
-}
+const router = createBrowserRouter(
+  [{
+    path: "/",
+    element: <Header />,
+    children: [
+       {path:"/", element:<Home />},
+       {path:"/projects", element:<Projects />},
+       {path:"/resume", element:<Resume />}
+    ]
+  }]
+)
 
-export default App;
+export default router
